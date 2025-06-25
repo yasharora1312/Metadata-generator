@@ -35,14 +35,6 @@ Supports PDFs, DOCX, TXT, and image files (`PNG`, `JPG`, `JPEG`).
 
 ---
 
-## 🛠️ Installation
-
-### 🐍 1. Clone the repository
-
-```bash
-git clone https://github.com/yasharora1312/metadata-generator.git
-cd metadata-generator
-
 ## 🖼 Screenshots
 
 ### 🔹 Home Page
@@ -55,3 +47,11 @@ cd metadata-generator
 ![metadata](screenshots/metadata.png)
 ![metadata](screenshots/metadata1.png)
 ![metadata](screenshots/metadata2.png)
+
+## 🛠️ Installation
+
+### 🐍 1. Clone the repository
+
+```bash
+git clone https://github.com/yasharora1312/metadata-generator.git
+cd metadata-generator

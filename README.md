@@ -55,3 +55,17 @@ Supports PDFs, DOCX, TXT, and image files (`PNG`, `JPG`, `JPEG`).
 ```bash
 git clone https://github.com/yasharora1312/metadata-generator.git
 cd metadata-generator
+
+metadata-generator/
+├── Mars1.py                    # Streamlit application main script
+├── requirements.txt            # Python dependencies
+├── README.md                   # Project documentation
+├── textext.png                 # Sample input image for testing
+├── screenshots/                # Screenshots for README
+│   ├── home.png
+│   ├── upload.png
+│   ├── metadata.png
+│   ├── metadata1.png
+│   └── metadata2.png
+└── .git/                       # Git tracking directory (hidden)
+

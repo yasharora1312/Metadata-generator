@@ -1,1 +1,12 @@
- 
+streamlit
+pymupdf
+python-docx
+pdf2image
+pytesseract
+Pillow
+keybert
+spacy
+transformers
+torch
+requests
+

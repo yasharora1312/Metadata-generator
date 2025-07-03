@@ -6,6 +6,8 @@ import pytesseract
 from PIL import Image
 from keybert import KeyBERT
 from transformers import pipeline
+import spacy
+import os
 import json
 import io
 import requests
@@ -14,14 +16,13 @@ from collections import Counter
 # Load models
 @st.cache_resource
 def load_models():
-    kw_model = KeyBERT(model='all-MiniLM-L6-v2')
-    import spacy
     try:
         nlp = spacy.load("en_core_web_sm")
     except OSError:
-        import os
-        os.system("python -m spacy download en_core_web_sm")
+        subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"], check=True)
         nlp = spacy.load("en_core_web_sm")
+        
+    kw_model = KeyBERT()
     summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
     return kw_model, nlp, summarizer
 

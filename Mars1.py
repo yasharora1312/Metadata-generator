@@ -10,6 +10,7 @@ import spacy
 import os
 import json
 import io
+import subprocess
 import requests
 from collections import Counter
 

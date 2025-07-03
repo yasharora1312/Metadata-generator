@@ -11,12 +11,14 @@ import json
 import io
 import requests
 from collections import Counter
+import en_core_web_sm
 
 # Load models
 @st.cache_resource
 def load_models():
     kw_model = KeyBERT(model='all-MiniLM-L6-v2')
-    nlp = spacy.load("en_core_web_sm")
+    nlp = en_core_web_sm.load()
+
     summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
     return kw_model, nlp, summarizer
 

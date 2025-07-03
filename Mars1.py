@@ -5,7 +5,6 @@ from pdf2image import convert_from_bytes
 import pytesseract
 from PIL import Image
 from keybert import KeyBERT
-import spacy
 from transformers import pipeline
 import json
 import io
@@ -17,7 +16,13 @@ from collections import Counter
 def load_models():
     kw_model = KeyBERT(model='all-MiniLM-L6-v2')
     import en_core_web_sm
-    nlp = en_core_web_sm.load()
+    import spacy
+    try:
+        nlp = spacy.load("en_core_web_sm")
+    except:
+        import os
+        os.system("python -m spacy download en_core_web_sm")
+        nlp = spacy.load("en_core_web_sm")
     summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
     return kw_model, nlp, summarizer
 

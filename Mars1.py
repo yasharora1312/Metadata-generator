@@ -15,11 +15,10 @@ from collections import Counter
 @st.cache_resource
 def load_models():
     kw_model = KeyBERT(model='all-MiniLM-L6-v2')
-    import en_core_web_sm
     import spacy
     try:
         nlp = spacy.load("en_core_web_sm")
-    except:
+    except OSError:
         import os
         os.system("python -m spacy download en_core_web_sm")
         nlp = spacy.load("en_core_web_sm")
